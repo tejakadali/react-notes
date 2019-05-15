@@ -10,7 +10,6 @@ class ViewNote extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // edit: false,
             filteredData: null,
             active_note: { note: '' },
             update: ''
@@ -18,26 +17,21 @@ class ViewNote extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-
         if (nextProps.active != this.props.active) {
             this.setState({ active_note: nextProps.active })
         }
-
     }
     componentDidMount () {
         this.setState({ active_note: this.props.active })
     }
 
     editNote = () => {
-        console.log(this.props.device)
-        // this.setState({ edit: true })
         this.props.dispatch(ReduxActions.edit_View('EDIT'))  
         if (this.props.device_width <= 575) {
             this.props.dispatch(ReduxActions.toggleList('close'))
         }
     }
     handleChange = (evt, id) => {
-        console.log("idd", id)
         const data = {
             id: id,
             timestamp: new Date(),
@@ -50,7 +44,6 @@ class ViewNote extends React.Component {
     render() {
         const { active_note } = this.state
         const { edit_view_toggle, query } = this.props
-        console.log("abcd",active_note)
         return (
             <div id="view_note">
                 <div className="time">
@@ -60,7 +53,7 @@ class ViewNote extends React.Component {
                 <div className="spacing">
                     {edit_view_toggle=="VIEW" ?
                         <div id="view_note_in" onClick={this.editNote}>
-                        {active_note.note == "" ? "Touch to start writing" : getHighlightedText(active_note.note, query)}
+                        {active_note.note == "" ? "Empty note. Start writing ..." : getHighlightedText(active_note.note, query)}
                         </div> :
                         <textarea
                             autoFocus={true}

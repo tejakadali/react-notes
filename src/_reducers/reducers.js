@@ -25,7 +25,6 @@ export const notes = (state = [], action) => {
       return [action.data, ...state];
     case 'UPDATE_NOTE':
       return state.map((note) => {
-        console.log("test", note.id, action.data.id, note)
         if (note.id === action.data.id) {
           return {
             ...note,

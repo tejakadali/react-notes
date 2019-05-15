@@ -23,7 +23,9 @@ class NavBar extends React.Component {
         const { value } = event.target
         this.props.dispatch(ReduxActions.handleSearchText(value))
     }
-
+    clearQuery = () => {
+        this.props.dispatch(ReduxActions.handleSearchTextReset())
+    }
     newNote = () => {
         const data = {
             id: uuidv1(),
@@ -47,18 +49,21 @@ class NavBar extends React.Component {
                 <div className="nav_1">
                     <span id="main_head"><span>React Redux Notes</span></span>
                     <div id="s_1">
-                        <button className="note_btn" onClick={this.newNote}><FaEdit className="fa_icon" /></button>
-                        <button className="note_btn" onClick={this.deleteNote}><FaTrashAlt className="fa_icon" /></button>
+                        <button className="note_btn" onClick={this.newNote}><FaEdit size={15} className="fa_icon" /></button>
+                        <button className="note_btn" onClick={this.deleteNote}><FaTrashAlt size={15} className="fa_icon" /></button>
                     </div>
                 </div>
                 <div className="nav_2">
                     <div id="s_2">
                         <button className="side_btn note_btn" onClick={this.toggleList}>
-                            <FaListAlt className="fa_icon" />
+                            <FaListAlt  className="fa_icon" />
                         </button>
                         <div id="search">
                         <input placeholder="Search" onChange={this.handleChange} value={this.props.query} autoFocus />
-                       {this.props.query!="" && <FaTimes class="clear" /> }
+                       {this.props.query!="" && 
+                       <FaTimes
+                        onClick={this.clearQuery}
+                        class="clear" /> }
                         </div>
                     </div>
                 </div>

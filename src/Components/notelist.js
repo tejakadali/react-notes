@@ -12,35 +12,17 @@ class NoteList extends React.Component {
             filteredData: null,
         };
     }
-    componentDidMount() {
-    }
-    // searchData = () => {
-    //     const { value } = event.target
-    //     let queryText = value
-    //     var queryResult = [];
-    //     this.props.NavBar.data.list.user.forEach(function (person) {
-    //         if ((person.name.toLowerCase().indexOf(queryText) != -1))
-    //             queryResult.push(person);
-    //     });
-
-    //     this.setState({
-    //         filteredData: queryResult
-    //     })
-    // }
     openNote = (obj) => {
         const { dispatch } = this.props
         dispatch(ReduxActions.openNote(obj))
-        console.log("his.props.active.note", obj.note)
         dispatch(ReduxActions.edit_View(obj.note == "" ? 'EDIT' : 'VIEW'))
-
         if (this.props.device_width <= 575) {
             this.props.dispatch(ReduxActions.toggleList('close'))
         }
-
     }
 
     render() {
-        const { filteres_notes, active, device_width } = this.props
+        const { filteres_notes, active } = this.props
 
         return (
             <React.Fragment>

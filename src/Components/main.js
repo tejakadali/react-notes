@@ -22,7 +22,6 @@ class Main extends React.Component {
     render() {
         const { toggle_list_view, filteres_notes } = this.props
         const { device } = this.state
-        console.log("device", device)
         return (
             <React.Fragment>
                 {filteres_notes.length == 0 ? <div id="no_notes">No notes found</div> :

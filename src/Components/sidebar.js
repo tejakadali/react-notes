@@ -11,9 +11,6 @@ class SideBar extends React.Component {
             filteredData: null,
         };
     }
-    componentDidMount() {
-    }
-
 
     render() {
         return (
