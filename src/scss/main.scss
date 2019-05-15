@@ -24,7 +24,7 @@ body {
   display: flex;
   justify-content: flex-end;
 }
-#no_notes{
+#no_notes {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,19 +42,22 @@ body {
 #s_2 {
   display: inline-block;
 }
+#s_1{
+  margin-left: .5em;
+}
 #s_2 {
-  //   float: right;
   .side_btn {
     display: none;
   }
 }
-#view_note_in{
-min-height: 80vh;
+#view_note_in {
+  min-height: 80vh;
 }
 #nav_main {
   display: flex;
   background: linear-gradient(to bottom, #e4e4e4, #cfd0cf);
   .note_btn {
+    cursor: pointer;
     background: #fff;
     padding: 0.3em 1.2em;
     margin: 0.4em;
@@ -63,6 +66,8 @@ min-height: 80vh;
     .fa_icon {
       font-size: 1.4em;
     }
+  }.delete:hover  .fa_icon {
+      color: red;
   }
   :focus {
     outline: none;
@@ -70,7 +75,7 @@ min-height: 80vh;
   #search {
     position: relative;
     margin-right: 1em;
-    input{
+    input {
       float: right;
       padding: 0.65em;
       margin: 0.4em;
@@ -78,11 +83,12 @@ min-height: 80vh;
       border-radius: 20px;
       width: 300px;
     }
-    .clear{
+    .clear {
       position: absolute;
       top: 0.8em;
       right: 1em;
-    cursor: pointer;    }
+      cursor: pointer;
+    }
   }
   :focus {
     outline: none;
@@ -177,16 +183,16 @@ textarea {
 
 // Extra small devices (portrait phones, less than 576px)
 @media screen and (max-width: 575px) {
-  #main_container{
-    .time{
-      font-size: .9em;
+  #main_container {
+    .time {
+      font-size: 0.9em;
     }
   }
   #nav_main {
     display: block;
   }
-  #side_bar{
-    .card{
+  #side_bar {
+    .card {
       padding: 0.5em 0.9em;
     }
   }
@@ -197,8 +203,8 @@ textarea {
   }
   #main_head {
     padding-left: 0 !important;
-    span{
-      padding-left: .4em;
+    span {
+      padding-left: 0.4em;
     }
   }
   .nav_1 {
@@ -212,11 +218,11 @@ textarea {
       display: flex;
     }
   }
-  
+
   #search {
-    input{
-    width: 100% !important;
-    border-radius: 6px !important;
+    input {
+      width: 100% !important;
+      border-radius: 6px !important;
     }
     // ::placeholder{
     //   text-align: center;
@@ -227,7 +233,7 @@ textarea {
   }
   #main_head {
     margin-top: 0.4em;
-    padding-left: .4em;
+    padding-left: 0.4em;
     text-align: left;
   }
   #side_bar {
@@ -238,6 +244,7 @@ textarea {
   }
   #s_1 {
     float: right;
+    margin-left: 0;
   }
   #s_2 {
     float: none;
