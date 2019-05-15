@@ -1,0 +1,267 @@
+body {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+#root {
+  height: 100vh;
+}
+#app {
+  height: 100vh;
+  // background: #f2f8f9;
+}
+.nav_1,
+.nav_2 {
+  width: 50%;
+}
+.nav_1 {
+  display: block !important;
+}
+.nav_2 {
+  display: flex;
+  justify-content: flex-end;
+}
+#no_notes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  font-size: 1.1em;
+}
+#main_head {
+  font-size: 1.2em;
+  text-align: center;
+  width: 200px;
+  display: inline-block;
+  border-right: 1px solid #cac1c1;
+}
+#s_1,
+#s_2 {
+  display: inline-block;
+}
+#s_2 {
+  //   float: right;
+  .side_btn {
+    display: none;
+  }
+}
+#view_note_in{
+min-height: 80vh;
+}
+#nav_main {
+  display: flex;
+  background: linear-gradient(to bottom, #e4e4e4, #cfd0cf);
+  .note_btn {
+    background: #fff;
+    padding: 0.4em 1.2em;
+    margin: 0.4em;
+    border-radius: 20%;
+    border: 1px solid transparent;
+    .fa_icon {
+      font-size: 1.4em;
+    }
+  }
+  :focus {
+    outline: none;
+  }
+  #search {
+    position: relative;
+    input{
+      float: right;
+      padding: 0.65em;
+      margin: 0.4em;
+      border-style: unset;
+      border-radius: 3.6%;
+      width: 300px;
+    }
+    .clear{
+      position: absolute;
+      top: 0.8em;
+      right: 1em;
+    cursor: pointer;    }
+  }
+  :focus {
+    outline: none;
+  }
+}
+#main_container {
+  position: relative;
+  height: calc(100vh - 39px);
+  width: 100%;
+}
+
+#side_bar {
+  background: #fffffe;
+  border-right: 1px solid #d8d5d5;
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  float: left;
+  //   @media screen and (max-width: 575px) {
+  //     position: absolute;
+  //     color: red;
+  //   }
+  .mask {
+    overflow-y: scroll;
+    height: calc(100vh - 39px);
+  }
+  h4 {
+    margin: 0;
+  }
+  .card {
+    width: inherit;
+    padding: 0.6em 1.5em;
+    border-bottom: 1px solid #d8d5d5;
+    .card_text {
+      cursor: pointer;
+      font-weight: 600;
+      width: 180px;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+    }
+  }
+  .active {
+    background: #f9e298;
+  }
+  .time {
+    font-weight: normal;
+    font-size: 0.9em;
+  }
+}
+#view_note {
+  background: #fffffe;
+  // width: 75%;
+  width: calc(100% - 200px);
+  float: right;
+  height: 100%;
+  .time {
+    text-align: center;
+    margin: 0.5em;
+    color: #a7a9a7;
+  }
+  .view,
+  .edit {
+    margin: 0 1.5em;
+    outline: none;
+  }
+  .spacing {
+    margin: 0 1em;
+  }
+}
+
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+}
+
+textarea {
+  border: none;
+  // border: 1px solid #000;
+  font-size: 1.2em;
+  width: 100%;
+  // margin: 5px 0;
+  // padding: 1%;
+  padding: 0;
+  resize: none;
+  height: calc(100vh - 100px);
+}
+:focus {
+  outline: none;
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media screen and (max-width: 575px) {
+  #nav_main {
+    display: block;
+  }
+  .nav_1,
+  .nav_2 {
+    display: block;
+    width: 100%;
+  }
+  // #main_head {
+  //   padding: 0 0.4em;
+  // }
+  .nav_1 {
+    display: flex !important;
+    justify-content: space-between;
+  }
+  #s_2 {
+    display: flex;
+    justify-content: space-between;
+    .side_btn {
+      display: flex;
+    }
+  }
+  #search {
+    input{
+    width: 100% !important;
+    }
+    width: 100%;
+    display: flex;
+  }
+  #main_head {
+    margin-top: 0.4em;
+    padding-left: .4em;
+    text-align: left;
+  }
+  #side_bar {
+    position: absolute;
+  }
+  #view_note {
+    width: 100%;
+  }
+  #s_1 {
+    float: right;
+  }
+  #s_2 {
+    float: none;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) and (max-width: 767px) {
+//     #side_bar{
+//         position: relative;
+//     }
+//  }
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) and (max-width: 991px) {
+//     #side_bar {
+//         position: absolute;
+//         color: red !important;
+//       }
+//  }
+
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) and (max-width: 1199px) {
+
+//  }
+
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+
+//  }
+.d_f {
+  display: flex !important;
+}
+.i_b {
+  display: inline-block !important;
+}
+.w-100 {
+  width: 100%;
+}
+.w-50 {
+  width: 50%;
+}
+
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
