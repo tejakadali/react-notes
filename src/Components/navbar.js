@@ -59,7 +59,7 @@ class NavBar extends React.Component {
                             <FaListAlt  className="fa_icon" />
                         </button>
                         <div id="search">
-                        <input placeholder="Search" onChange={this.handleChange} value={this.props.query} autoFocus />
+                        <input placeholder="Start Typing here to search notes.." onChange={this.handleChange} value={this.props.query} autoFocus />
                        {this.props.query!="" && 
                        <FaTimes
                         onClick={this.clearQuery}
