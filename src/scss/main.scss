@@ -78,14 +78,14 @@ body {
     input {
       float: right;
       padding: 0.65em;
-      margin: 0.4em;
+      margin: 0.2em;
       border-style: unset;
       border-radius: 20px;
       width: 300px;
     }
     .clear {
       position: absolute;
-      top: 0.8em;
+      top: 0.85em;
       right: 1em;
       cursor: pointer;
     }
@@ -96,7 +96,7 @@ body {
 }
 #main_container {
   position: relative;
-  height: calc(100vh - 39px);
+  height: calc(100vh - 38.66px);
   width: 100%;
 }
 
@@ -113,7 +113,7 @@ body {
   //   }
   .mask {
     overflow-y: scroll;
-    height: calc(100vh - 39px);
+    height: calc(100vh - 38.66px);
   }
   h4 {
     margin: 0;
@@ -203,6 +203,7 @@ textarea {
   }
   #main_head {
     padding-left: 0 !important;
+    border-right: 0; 
     span {
       padding-left: 0.4em;
     }
