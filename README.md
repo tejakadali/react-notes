@@ -1,4 +1,5 @@
 Used React,Redux and Webpack.
+
 Running in Webpack development server.
 
 Quick start
@@ -7,6 +8,7 @@ Quick start
 3) Move to the appropriate directory: cd <YOUR_PROJECT_NAME>.
 4) Run 'npm install' in order to install dependencies.
 5) At this point you can run 'npm run dev' to see the example redux notes app at http://0.0.0.0:8009
+6) Run 'npm run build' for production build
 
 npm run dev to run webpack development server
 npm run build for production build
