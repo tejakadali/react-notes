@@ -13,7 +13,7 @@ function handleSearchText(query) {
         dispatch({ type: 'VIEW' })
         let { notes } = getState()
         let notes_filtered = notes.filter(data => {
-            return data.note.toLowerCase().indexOf(query) != -1
+            return (data.note.toLowerCase().indexOf(query) != -1 || data.note.indexOf(query) != -1)
         })
         dispatch({ type: 'FILTERED_NOTES', notes_filtered })
         if (notes_filtered.length != 0) dispatch({ type: 'ACTIVE_NOTE', data: notes_filtered[0] })
