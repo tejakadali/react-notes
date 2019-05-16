@@ -6,14 +6,11 @@ import { ViewNote } from '../Components/viewnote'
 
 class Main extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = { device: '' }
-    }
     componentDidMount() {
         window.addEventListener("resize", this.resize.bind(this));
         this.resize()
     }
+    
     resize() {
         // let mobileDevice = (window.innerWidth <= 575);
         // this.setState({ device: mobileDevice ? 'Mobile' : 'Desktop' })
@@ -21,13 +18,12 @@ class Main extends React.Component {
     }
     render() {
         const { toggle_list_view, filteres_notes } = this.props
-        const { device } = this.state
         return (
             <React.Fragment>
                 {filteres_notes.length == 0 ? <div id="no_notes">No notes found</div> :
                     <React.Fragment>
                         {toggle_list_view && <SideBar />}
-                        <ViewNote device={device} />
+                        <ViewNote />
                     </React.Fragment>
                 }
             </React.Fragment>

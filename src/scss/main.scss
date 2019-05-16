@@ -42,8 +42,8 @@ body {
 #s_2 {
   display: inline-block;
 }
-#s_1{
-  margin-left: .5em;
+#s_1 {
+  margin-left: 0.5em;
 }
 #s_2 {
   .side_btn {
@@ -54,6 +54,7 @@ body {
   min-height: 80vh;
 }
 #nav_main {
+  padding: 0.2em 0;
   display: flex;
   background: linear-gradient(to bottom, #e4e4e4, #cfd0cf);
   .note_btn {
@@ -66,8 +67,9 @@ body {
     .fa_icon {
       font-size: 1.4em;
     }
-  }.delete:hover  .fa_icon {
-      color: red;
+  }
+  .delete:hover .fa_icon {
+    color: red;
   }
   :focus {
     outline: none;
@@ -75,17 +77,18 @@ body {
   #search {
     position: relative;
     margin-right: 1em;
+    margin-top: .05em;
     input {
       float: right;
       padding: 0.65em;
-      margin: 0.2em;
+      margin: 0.3em;
       border-style: unset;
-      border-radius: 20px;
+      border-radius: 6px;
       width: 300px;
     }
     .clear {
       position: absolute;
-      top: 0.85em;
+      top: 0.67em;
       right: 1em;
       cursor: pointer;
     }
@@ -105,7 +108,7 @@ body {
   border-right: 1px solid #d8d5d5;
   height: 100%;
   width: 200px;
-  position: fixed;
+  position: absolute;
   float: left;
   //   @media screen and (max-width: 575px) {
   //     position: absolute;
@@ -122,6 +125,7 @@ body {
     width: inherit;
     padding: 0.6em 1.5em;
     border-bottom: 1px solid #d8d5d5;
+    overflow-x: hidden;
     .card_text {
       cursor: pointer;
       font-weight: 600;
@@ -203,7 +207,7 @@ textarea {
   }
   #main_head {
     padding-left: 0 !important;
-    border-right: 0; 
+    border-right: 0;
     span {
       padding-left: 0.4em;
     }

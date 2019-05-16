@@ -23,14 +23,12 @@ class NoteList extends React.Component {
 
     render() {
         const { filteres_notes, active } = this.props
-
         return (
             <React.Fragment>
                 {filteres_notes.length == 0 ? <div>No notes found</div> :
                     filteres_notes.map(obj => {
-                        return <div className={classnames('card', { 'active': active.id == obj.id })}
-                         onClick={() => this.openNote(obj)}
-                         >
+                        return <div key={obj.id} className={classnames('card', { 'active': active.id == obj.id })}
+                            onClick={() => this.openNote(obj)}>
                             <span className="card_text">
                                 {obj.note == "" ? "New note" : obj.note}
                                 <div className="time">{moment(obj.timestamp).format("h:mmA")}</div>

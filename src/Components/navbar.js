@@ -63,7 +63,7 @@ class NavBar extends React.Component {
                        {this.props.query!="" && 
                        <FaTimes
                         onClick={this.clearQuery}
-                        class="clear" /> }
+                        className="clear" /> }
                         </div>
                     </div>
                 </div>
