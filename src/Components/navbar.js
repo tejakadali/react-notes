@@ -48,10 +48,10 @@ class NavBar extends React.Component {
             <div id="nav_main" >
                 <div className="nav_1">
                     <span id="main_head"><span>React Redux Notes</span></span>
-                    <div id="s_1">
+                   {this.props.query=="" && <div id="s_1">
                         <button className="note_btn" onClick={this.newNote}><FaEdit size={15} className="fa_icon" /></button>
                         <button className="note_btn delete" onClick={this.deleteNote}><FaTrashAlt size={15} className="fa_icon" /></button>
-                    </div>
+                    </div> }
                 </div>
                 <div className="nav_2">
                     <div id="s_2">

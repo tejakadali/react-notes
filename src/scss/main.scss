@@ -34,6 +34,7 @@ body {
 #main_head {
   font-size: 1.2em;
   text-align: center;
+  padding: 0.21em 0;
   width: 200px;
   display: inline-block;
   border-right: 1px solid #cac1c1;
@@ -237,7 +238,7 @@ textarea {
     margin-right: 0 !important;
   }
   #main_head {
-    margin-top: 0.4em;
+    margin-top: 0.1em;
     padding-left: 0.4em;
     text-align: left;
   }
